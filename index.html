@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>An ode to the giant</title>
+  <style>
+    /* The "*" means: apply those styles to all elements */
+    * {
+    box-sizing: border-box;
+    }
+
+    body {
+    font-family: Arial;
+    padding: 10px;
+    background: #EE0F12;
+    }
+
+    /* Header/Blog Title */
+    .header {
+    padding: 30px;
+    text-align: center;
+    background: #F6F7EF;
+    }
+
+    .header h1 {
+    font-size: 50px;
+    }
+
+    /* Style the top navigation bar */
+    .topnav {
+    overflow: hidden;
+    background-color: #333;
+    }
+
+    /* Style the topnav links 
+    I just added js to make the nav bar "sticky"*/
+    .topnav a {
+    float: left;
+    display: block;
+    color: #F6F7EF;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: all .25s ease;
+    }
+
+    /* Change color on hover */
+    .topnav a:hover {
+    background-color: #F6F7EF;
+    color: black;
+    }
+
+    /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+    .sticky {
+    position: fixed;
+    top: 0;
+    width: 95%;
+    }
+
+    /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+    .sticky + .a {
+        padding-top: 60px;
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {   
+    float: left;
+    width: 75%;
+    }
+
+    /* Right column */
+    .rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #333;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    }
+
+    img {
+    width: 100%;
+    height: 100%; 
+    border-radius: 10%;
+    padding: 20px;
+    transition: all .25s ease;
+    }
+
+    img:hover {
+    opacity: 0.9;
+    border-radius: 25%;
+    }
+
+    /* Add a card effect for articles */
+    .card {
+    background-color: #F6F7EF;
+    padding: 20px;
+    margin-top: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    /* Footer */
+    .footer {
+    padding: 20px;
+    text-align: center;
+    background: #333;
+    color: #F6F7EF;
+    margin-top: 20px;
+    }
+
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+    }
+
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+    }
+
+  </style>
+</head>
+<body>
+<!-- With this project, I will:
+    1. start by getting a good CSS layout
+    2. Try to work in accessibility after I get a good layout. (I should do this during, but I ain't ready for that yet)
+ -->
+
+    <div class="header">
+        <h1>An ode to the giant</h1>
+        <h2>A bike for mountains. Or Chicago.</h2>
+    </div>
+
+    <div class="topnav" id="navbar">
+        <a href="#bike1">Bike 1</a>
+        <a href="#bike2">Bike 2</a>
+        <a href="#bike3">Bike 3</a>
+        <a href="https://www.google.com/search?q=giant+mountain+bike&rlz=1C1RLNS_enUS736US736&source=lnms&tbm=isch&sa=X&ved=0ahUKEwirvbiT4cfkAhVJRqwKHSlyASAQ_AUIEygC&biw=675&bih=639" target="_blank" style="float:right">A further gander</a>
+    </div>
+
+    <div class="row">
+            <div class="leftcolumn">
+              <div class="card" id="bike1">
+                <h2>BIKE ONE</h2>
+                <h3>A very good bike, indeed.</h3>
+                <div class="img">
+                    <a href="https://images.giant-bicycles.com/b_white,c_pad,h_400,q_80/Talon-3_Color-A_Black_Red/Talon-3_Color-A_Black_Red.jpg"><img src="https://images.giant-bicycles.com/b_white,c_pad,h_400,q_80/Talon-3_Color-A_Black_Red/Talon-3_Color-A_Black_Red.jpg"/></a>
+                </div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+              </div>
+              <div class="card" id="bike2">
+                <h2>BIKE TWO</h2>
+                <h3>A mighty fine bike as well, I'll say.</h3>
+                <div class="img">
+                    <a href="https://giantcdn-qu2qwwv2de7wv85rz.stackpathdns.com/remote/www.giant-bicycles.com/_upload_au/bikes/models/xxl/2012/boulder_3_black_blue_2000px.jpg"><img src="https://giantcdn-qu2qwwv2de7wv85rz.stackpathdns.com/remote/www.giant-bicycles.com/_upload_au/bikes/models/xxl/2012/boulder_3_black_blue_2000px.jpg"/></a>
+                </div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+              </div>
+              <div class="card" id="bike3">
+                <h2>BIKE THREE</h2>
+                <h3>Ah yes, an absolute stunner.</h3>
+                <div class="img">
+                    <a href="https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/onvlng5kgdxlcuj7gexb/MY19Talon3_ColorA.jpg"><img src="https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/onvlng5kgdxlcuj7gexb/MY19Talon3_ColorA.jpg"/></a>
+                </div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                </div>
+            </div>
+            <div class="rightcolumn">
+              <div class="card">
+                <h2>About the Giant</h2>
+                <div class="img"><a href="https://www.giant-bicycles.com/au" target="_blank"><img src="https://dstqaa92re5c4.cloudfront.net/Images/Giant/Logos/Giant-Logo-New.png" style="background-color:#333;"/></a>
+                </div>
+                <p>It is a bike that people enjoy. Click the logo to see their website.</p>
+              </div>
+              <div class="card">
+                <h3>Popular Post</h3>
+                <div class="fakeimg"><p>Image</p></div>
+                <div class="fakeimg"><p>Image</p></div>
+                <div class="fakeimg"><p>Image</p></div>
+              </div>
+              <div class="card">
+                <h3>Follow Me</h3>
+                <a href="https://github.com/DAnians530" target="_blank"><img src="GitHub-Mark-64px.png" style="height:75px; width:75px; padding:0px;"/></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="footer">
+            <h3>This site is not endorsed or sponsored by the folks who make the Giant bikes.</h3>
+          </div>
+
+
+
+
+  <script>
+
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function() {myFunction()};
+
+    // Get the navbar
+    var navbar = document.getElementById("navbar");
+
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetTop;
+
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
+    }
+
+
+  </script>
+
+
+
+</body>
+</html>
